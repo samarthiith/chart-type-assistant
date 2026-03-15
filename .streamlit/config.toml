@@ -1,19 +1,134 @@
-[theme]
-primaryColor = "#00ADB5"
-backgroundColor = "#222831"
-secondaryBackgroundColor = "#393E46"
-textColor = "#EEEEEE"
+# Streamlit configuration for modern, squared-off design
+# Modern dark theme inspired by Color Hunt palette
+# Supports both light and dark modes - users can switch in app settings (⋮ menu)
+# Palette: Charcoal (#222831), Dark Gray (#393E46), Cyan (#00ADB5), Light Gray (#EEEEEE)
 
+# ═══════════════════════════════════════════════════════════
+# LIGHT THEME - Clean, modern, professional
+# ═══════════════════════════════════════════════════════════
+[theme.light]
+# Primary colors - Modern cyan accent
+primaryColor = "#00ADB5"                # Cyan for buttons and primary actions
+backgroundColor = "#FFFFFF"              # Clean white background
+secondaryBackgroundColor = "#F5F5F5"    # Light gray for widgets
+textColor = "#222831"                   # Charcoal for high contrast text (WCAG AA compliant)
+
+# Links and interactive elements
+linkColor = "#00ADB5"                   # Links use cyan
+linkUnderline = false                   # Clean, modern look without underlines
+
+# Code styling
+codeBackgroundColor = "#F5F5F5"         # Light gray for code blocks
+codeTextColor = "#222831"               # Charcoal for code readability
+
+# Borders
+borderColor = "#E0E0E0"                 # Light gray for subtle borders
+
+# Semantic colors - Status indicators and badges
+redColor = "#E63946"                    # Error states, critical alerts
+orangeColor = "#F77F00"                 # Warnings, attention needed
+yellowColor = "#FCBF49"                 # Caution, pending states
+greenColor = "#06D6A0"                  # Success, positive states
+blueColor = "#00ADB5"                   # Info uses cyan
+violetColor = "#9D4EDD"                 # Special features, highlights
+grayColor = "#6C757D"                   # Muted, secondary info
+
+# Dataframe styling
+dataframeBorderColor = "#E0E0E0"
+dataframeHeaderBackgroundColor = "#F5F5F5"
+
+# Typography - Roboto Flex variable font
+font = "Roboto Flex:https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap, sans-serif"
+headingFont = "Roboto Flex:https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,600..700&display=swap, sans-serif"
+codeFont = "monospace"
+codeFontSize = "13px"
+headingFontSizes = ["32px", "24px", "20px", "16px", "14px", "12px"]
+headingFontWeights = [600, 600, 600, 500, 500, 500]
+
+# Borders & radius - Squared-off design
+baseRadius = "0px"
+buttonRadius = "0px"
+showWidgetBorder = true
+
+# Light theme sidebar - Slightly darker for hierarchy
+[theme.light.sidebar]
+backgroundColor = "#F5F5F5"
+secondaryBackgroundColor = "#EEEEEE"
+codeBackgroundColor = "#E0E0E0"
+textColor = "#222831"
+borderColor = "#E0E0E0"
+primaryColor = "#00ADB5"
+
+# ═══════════════════════════════════════════════════════════
+# DARK THEME - Modern, sleek, professional
+# ═══════════════════════════════════════════════════════════
+[theme.dark]
+# Primary colors - Modern dark palette with cyan accent
+primaryColor = "#00ADB5"                # Cyan for buttons and primary actions
+backgroundColor = "#222831"              # Charcoal main background
+secondaryBackgroundColor = "#393E46"    # Dark gray for widgets
+textColor = "#EEEEEE"                   # Light gray text (WCAG AA compliant)
+
+# Links and interactive elements
+linkColor = "#00ADB5"                   # Cyan for links in dark mode
+linkUnderline = false
+
+# Code styling
+codeBackgroundColor = "#393E46"         # Dark gray for code blocks
+codeTextColor = "#EEEEEE"               # Light gray for code readability
+
+# Borders
+borderColor = "#4A5058"                 # Subtle dark gray borders (low contrast)
+
+# Semantic colors - Bright colors for dark backgrounds
+redColor = "#FF6B6B"                    # Bright red for visibility
+orangeColor = "#FFA94D"                 # Bright orange
+yellowColor = "#FFD43B"                 # Bright yellow
+greenColor = "#51CF66"                  # Bright green
+blueColor = "#00ADB5"                   # Cyan (primary)
+violetColor = "#B197FC"                 # Bright violet
+grayColor = "#ADB5BD"                   # Cool gray
+
+# Dataframe styling
+dataframeBorderColor = "#4A5058"
+dataframeHeaderBackgroundColor = "#393E46"
+
+# Typography - Same fonts as light mode
+font = "Roboto Flex:https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap, sans-serif"
+headingFont = "Roboto Flex:https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,600..700&display=swap, sans-serif"
+codeFont = "monospace"
+codeFontSize = "13px"
+headingFontSizes = ["32px", "24px", "20px", "16px", "14px", "12px"]
+headingFontWeights = [600, 600, 600, 500, 500, 500]
+
+# Borders & radius - Same squared-off design
+baseRadius = "0px"
+buttonRadius = "0px"
+showWidgetBorder = true
+
+# Dark theme sidebar - Darker charcoal for hierarchy
+[theme.dark.sidebar]
+backgroundColor = "#393E46"
+secondaryBackgroundColor = "#4A5058"
+codeBackgroundColor = "#5A5F68"
+textColor = "#EEEEEE"
+borderColor = "#4A5058"
+primaryColor = "#00ADB5"
+
+# ═══════════════════════════════════════════════════════════
+# UI CONFIGURATION
+# ═══════════════════════════════════════════════════════════
 [ui]
 hideTopBar = false
 
 [client]
 showErrorDetails = true
-toolbarMode = "developer"
+toolbarMode = "developer"             # Cleanest interface
 showSidebarNavigation = true
 
 [browser]
 gatherUsageStats = false
 
 [server]
+enableCORS = true
 enableXsrfProtection = true
