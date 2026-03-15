@@ -1,0 +1,10 @@
+name: cta
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - streamlit==1.53.0
+      - requests==2.32.3
+      - python-dotenv==1.0.1

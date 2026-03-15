@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.DS_Store
+.idea/
+.vscode/
+*.log
+.streamlit/secrets.toml
+node_modules/

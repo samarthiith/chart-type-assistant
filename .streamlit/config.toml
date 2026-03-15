@@ -1,0 +1,19 @@
+[theme]
+primaryColor = "#00ADB5"
+backgroundColor = "#222831"
+secondaryBackgroundColor = "#393E46"
+textColor = "#EEEEEE"
+
+[ui]
+hideTopBar = false
+
+[client]
+showErrorDetails = true
+toolbarMode = "developer"
+showSidebarNavigation = true
+
+[browser]
+gatherUsageStats = false
+
+[server]
+enableXsrfProtection = true

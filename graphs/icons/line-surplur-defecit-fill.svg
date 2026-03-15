@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="96" height="96" fill="none">
+<g stroke-linecap="round" stroke-linejoin="round">
+<line x1="10" y1="65" x2="70" y2="65" stroke="#4A5568" stroke-width="1"/><line x1="10" y1="15" x2="10" y2="65" stroke="#4A5568" stroke-width="1"/><line x1="10" y1="42" x2="70" y2="42" stroke="#4A5568" stroke-width="0.5"/><path d="M10,42 L25,35 L40,42 L55,30 L70,38 L70,42 L55,42 L40,42 L25,42 L10,42Z" fill="#00ADB566"/><path d="M10,42 L20,50 L35,48 L50,55 L65,47 L70,42 L65,42 L50,42 L35,42 L20,42 L10,42Z" fill="#f9731666"/><polyline points="10,42 25,35 40,42 55,30 70,38" stroke="#00ADB5" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><polyline points="10,42 20,50 35,48 50,55 65,47 70,42" stroke="#f97316" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>
