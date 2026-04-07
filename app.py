@@ -11,16 +11,16 @@ MODEL_NAME = "google/gemini-3-flash-preview"
 
 # Page configuration
 st.set_page_config(
-    page_title="Chart Selection Assistant",
+    page_title="Chart Type Assistant",
     page_icon=":material/robot:",
     layout="wide",
 )
 
 st.header(
-    """Graph Selection Assistant :material/bar_chart: :material/show_chart: :material/scatter_plot:"""
+    """Chart Type Assistant :material/bar_chart: :material/show_chart: :material/scatter_plot:"""
 )
 st.write(
-    "This tool uses AI to recommend the best types of graphs based on your key message and data."
+    "This tool uses AI to recommend the best types of charts based on your key message and data."
 )
 
 # Info section about Visual Vocabulary
