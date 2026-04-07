@@ -5,12 +5,16 @@ This app us AI to give recommendations of chart type based on the message/relati
 *"Graphs show relationships not data."* - Alan Smith (📚 [How Charts Work](https://www.goodreads.com/book/show/63127668-how-charts-work))
 
  [FT Interactive Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/) is a great resource providing overview of different chart types. 
+
 ## Features
 
 - AI-powered graph type recommendations
 - Gemini 3 (via OpenRouter) for fast, structured recommendations
 - Integration with FT Visual Vocabulary chart taxonomy
 - Explanations with axes, legends, and chart-specific rationale
+
+![screen shot of app](app-screen-shot.jpg)
+
 
 ## Setup
 
