@@ -25,6 +25,17 @@ describe("HomePage", () => {
     expect(screen.queryByLabelText("OpenRouter API key")).not.toBeInTheDocument();
   });
 
+  it("describes each input with its help text", () => {
+    renderHomePage();
+
+    expect(screen.getByLabelText("Key message / relationship")).toHaveAccessibleDescription(
+      "What is the relationship you want to show?",
+    );
+    expect(screen.getByLabelText("Data description")).toHaveAccessibleDescription(
+      "Describe the data you have for the graph.",
+    );
+  });
+
   it("warns that recommendations are AI-generated", () => {
     renderHomePage();
 

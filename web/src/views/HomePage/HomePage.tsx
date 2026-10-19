@@ -16,6 +16,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { FormEvent } from "react";
 
 import Button from "@/components/Button/Button";
+import InfoTip from "@/components/InfoTip/InfoTip";
 import Notice from "@/components/Notice/Notice";
 import RecommendationCard from "@/components/RecommendationCard/RecommendationCard";
 import Topbar from "@/components/Topbar/Topbar";
@@ -44,6 +45,8 @@ export default function HomePage({ serverKeyConfigured, promptTemplate }: HomePa
   const requestRef = useRef<AbortController | null>(null);
   const keyMessageId = useId();
   const dataDescriptionId = useId();
+  const keyMessageHelpId = useId();
+  const dataDescriptionHelpId = useId();
   const apiKeyId = useId();
   const apiKeyHelpId = useId();
 
@@ -127,13 +130,16 @@ export default function HomePage({ serverKeyConfigured, promptTemplate }: HomePa
         <form className={styles["form"]} onSubmit={handleSubmit} noValidate>
           <div className={styles["fields"]}>
             <div className={styles["field"]}>
-              <label htmlFor={keyMessageId} className={styles["field-label"]}>
-                <MessageSquareText size={16} aria-hidden="true" />
-                Key message / relationship
-              </label>
-              <p className={styles["field-help"]}>What is the relationship you want to show?</p>
+              <div className={styles["label-row"]}>
+                <label htmlFor={keyMessageId} className={styles["field-label"]}>
+                  <MessageSquareText size={16} aria-hidden="true" />
+                  Key message / relationship
+                </label>
+                <InfoTip id={keyMessageHelpId} text="What is the relationship you want to show?" />
+              </div>
               <textarea
                 id={keyMessageId}
+                aria-describedby={keyMessageHelpId}
                 className={styles["textarea"]}
                 value={keyMessage}
                 onChange={(event) => setKeyMessage(event.target.value)}
@@ -141,13 +147,16 @@ export default function HomePage({ serverKeyConfigured, promptTemplate }: HomePa
               />
             </div>
             <div className={styles["field"]}>
-              <label htmlFor={dataDescriptionId} className={styles["field-label"]}>
-                <Table size={16} aria-hidden="true" />
-                Data description
-              </label>
-              <p className={styles["field-help"]}>Describe the data you have for the graph.</p>
+              <div className={styles["label-row"]}>
+                <label htmlFor={dataDescriptionId} className={styles["field-label"]}>
+                  <Table size={16} aria-hidden="true" />
+                  Data description
+                </label>
+                <InfoTip id={dataDescriptionHelpId} text="Describe the data you have for the graph." />
+              </div>
               <textarea
                 id={dataDescriptionId}
+                aria-describedby={dataDescriptionHelpId}
                 className={styles["textarea"]}
                 value={dataDescription}
                 onChange={(event) => setDataDescription(event.target.value)}

@@ -122,9 +122,15 @@
 
 .field {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr;
   gap: var(--space-1);
   min-width: 0;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
 }
 
 .field-label {
