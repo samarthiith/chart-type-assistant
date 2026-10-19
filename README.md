@@ -51,6 +51,47 @@ streamlit run app.py
 
 The app will open at [http://localhost:8501](http://localhost:8501).
 
+## Web app (Next.js)
+
+A Next.js replica of the Streamlit app lives in [`web/`](web/). It has the same inputs, prompt, model, tool schema and result cards, with a different visual style. Both apps read the chart vocabulary and icons from `graphs/`.
+
+### Prerequisites
+
+- Node.js 20.9+ (`web/.nvmrc` pins 22)
+
+### Run it
+
+```bash
+cd web
+cp .env.example .env.local   # then set OPENROUTER_API_KEY, or leave it unset to enter a key in the app
+./run.sh                     # installs dependencies if needed, then starts the dev server
+```
+
+The app opens at [http://localhost:3000](http://localhost:3000). Use `./run.sh --prod` for a production build and server, and `PORT=4000 ./run.sh` to change the port. Without the script: `npm install && npm run dev`.
+
+`npm run dev`, `build`, `test` and `typecheck` first copy `graphs/visual_vocabulary.json` and `graphs/icons/` into `web/` (`npm run sync-graphs`). Those copies are gitignored, so edit the files in `graphs/`.
+
+### Checks
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+```
+
+The prompt and tool-schema tests compare the TypeScript port with fixtures generated from `api_utils.py`. If you change the prompt, the tool schema or `graphs/visual_vocabulary.json`, regenerate them from the repository root:
+
+```bash
+python web/scripts/generate_parity_fixtures.py
+```
+
+### Layout
+
+- `web/src/app/`: the page and the `POST /api/recommend` route handler, which calls OpenRouter on the server
+- `web/src/server/`: prompt construction, OpenRouter client and vocabulary helpers (ports of `api_utils.py`)
+- `web/src/views/` and `web/src/components/`: React UI with SCSS modules
+- `web/src/shared/`: shared types, constants and utilities
+
 ## Usage
 
 1. Enter the key message/relationship you want the chart to communicate.

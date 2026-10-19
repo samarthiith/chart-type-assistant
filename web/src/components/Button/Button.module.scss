@@ -1,0 +1,53 @@
+.button {
+  min-height: var(--control-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-control);
+  padding: 0 var(--space-4);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+
+  &:disabled {
+    cursor: progress;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 760px) {
+    min-height: var(--control-height-touch);
+  }
+}
+
+.primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, #000 18%, transparent);
+  color: white;
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-accent-dim);
+    background: var(--color-accent-dim);
+  }
+}
+
+.ghost {
+  background: var(--color-panel);
+  color: var(--color-text-primary);
+
+  &:hover:not(:disabled) {
+    background: var(--color-surface);
+  }
+}
+
+.full-width {
+  width: 100%;
+}

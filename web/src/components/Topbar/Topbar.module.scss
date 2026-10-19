@@ -1,0 +1,108 @@
+.topbar {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: var(--border-light);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-soft);
+}
+
+.status-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.utilities {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--space-2);
+}
+
+.utility-button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: var(--border-light);
+  border-radius: var(--radius-control);
+  background: color-mix(in srgb, var(--color-panel) 62%, transparent);
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-border);
+    background: var(--color-panel);
+  }
+
+  @media (max-width: 760px) {
+    width: var(--control-height-touch);
+    min-height: var(--control-height-touch);
+    padding: 0;
+  }
+}
+
+.utility-label {
+  @media (max-width: 760px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.about {
+  display: grid;
+  gap: var(--space-3);
+  line-height: 1.65;
+
+  h3 {
+    font-family: var(--font-text);
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-regular);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: var(--space-5);
+  }
+}
+
+.prompt-template {
+  margin: 0;
+  border: var(--border-light);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  padding: var(--space-4);
+  font-size: var(--font-size-small);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

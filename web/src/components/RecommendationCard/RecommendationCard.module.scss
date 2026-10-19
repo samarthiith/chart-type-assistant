@@ -1,0 +1,147 @@
+.card {
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  background: var(--color-panel);
+  box-shadow: var(--shadow-flat);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  border-bottom: var(--border-light);
+  padding: var(--space-4) var(--space-5);
+
+  @media (max-width: 760px) {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+}
+
+.index {
+  color: var(--color-text-faint);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+}
+
+.title {
+  min-width: 0;
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.category,
+.label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.category {
+  @media (max-width: 760px) {
+    grid-column: 2;
+  }
+
+  em {
+    color: var(--color-accent-dim);
+    font-style: normal;
+  }
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: minmax(96px, 1fr) 3fr;
+  gap: var(--space-5);
+  padding: var(--space-5);
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.figure {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border: var(--border-light);
+  border-radius: var(--radius-control);
+  background: white;
+  padding: var(--space-4);
+  aspect-ratio: 1;
+
+  @media (max-width: 760px) {
+    width: 140px;
+  }
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+}
+
+.missing-image {
+  color: var(--color-text-faint);
+  font-size: var(--font-size-small);
+}
+
+.details {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.description {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-text);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.mapping {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: var(--border-light);
+
+  section {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+    min-width: 0;
+    padding: var(--space-4) var(--space-5);
+  }
+
+  section + section {
+    border-left: var(--border-light);
+  }
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+
+    section + section {
+      border-top: var(--border-light);
+      border-left: 0;
+    }
+  }
+}
+
+.axes {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+
+  dt {
+    font-weight: var(--font-weight-bold);
+  }
+
+  dd {
+    margin: 0;
+  }
+}
