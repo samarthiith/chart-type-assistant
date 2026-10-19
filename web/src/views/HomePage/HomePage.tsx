@@ -205,18 +205,7 @@ export default function HomePage({ serverKeyConfigured, promptTemplate }: HomePa
 function ResultView({ result }: { result: ResultState }) {
   switch (result.status) {
     case "idle":
-      return (
-        <div className={styles["empty-state"]}>
-          <span className={styles["status-label"]}>
-            <span className={styles["status-dot"]} aria-hidden="true" />
-            Awaiting input
-          </span>
-          <h2 className={styles["empty-heading"]}>Which chart tells your story?</h2>
-          <p className={styles["empty-copy"]}>
-            Describe your key message and data, then ask for two or three chart types that fit.
-          </p>
-        </div>
-      );
+      return null;
     case "loading":
       return (
         <p className={styles["loading"]} role="status">
