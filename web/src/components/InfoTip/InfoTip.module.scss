@@ -1,0 +1,77 @@
+.info-tip {
+  position: relative;
+  display: inline-flex;
+  top: -0.35em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+.trigger {
+  position: relative;
+  display: inline-flex;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  padding: 0;
+  color: var(--color-text-muted);
+  cursor: help;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent);
+  }
+
+  // Keep a 44px touch target around the small icon on mobile.
+  @media (max-width: 760px) {
+    &::before {
+      position: absolute;
+      inset: -15px;
+      content: "";
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 10;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  width: max-content;
+  max-width: min(260px, 70vw);
+  border: var(--border-hairline);
+  border-radius: var(--radius-control);
+  background: var(--color-text-primary);
+  box-shadow: var(--shadow-flat);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-panel);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: normal;
+  line-height: 1.45;
+  text-transform: none;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 2px);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease;
+  visibility: hidden;
+
+  @media (max-width: 760px) {
+    left: 0;
+    transform: translate(-25%, 2px);
+  }
+}
+
+.info-tip:hover .tooltip,
+.trigger:focus-visible + .tooltip,
+.trigger:focus + .tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+
+  @media (max-width: 760px) {
+    transform: translate(-25%, 0);
+  }
+}

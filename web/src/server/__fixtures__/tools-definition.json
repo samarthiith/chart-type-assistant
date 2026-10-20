@@ -1,0 +1,147 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "recommend_graphs",
+      "description": "Recommend graphs for the user's data visualization needs. Call this function to provide structured graph recommendations.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "recommendations": {
+            "type": "array",
+            "description": "List of 2-3 graph recommendations",
+            "items": {
+              "type": "object",
+              "properties": {
+                "chart_name": {
+                  "type": "string",
+                  "description": "The chart type name from the Visual Vocabulary",
+                  "enum": [
+                    "none",
+                    "bar-diverging",
+                    "bar-diverging-stacked",
+                    "spine-chart",
+                    "line-surplus-deficit-filled",
+                    "scatterplot",
+                    "line-column",
+                    "scatterplot-connected",
+                    "bubble",
+                    "xy-heatmap",
+                    "line",
+                    "column-timeline",
+                    "column-line-timeline",
+                    "stock-price",
+                    "slope",
+                    "area",
+                    "fan",
+                    "scatterplot-line-timeline",
+                    "calendar-heatmap",
+                    "priestley-timeline",
+                    "circles-timeline",
+                    "seismogram",
+                    "bar-ordered",
+                    "column-ordered",
+                    "symbol-proportional-ordered",
+                    "dot-plot-strip-ranking",
+                    "slope-ranking",
+                    "lollipop-h-ranking",
+                    "lollipop-v-ranking",
+                    "bump",
+                    "histogram",
+                    "boxplot",
+                    "violin",
+                    "population-pyramid",
+                    "dot-plot-strip-distribution",
+                    "dot-plot",
+                    "barcode",
+                    "cumulative-curve",
+                    "column-stacked",
+                    "bar-stacked-proportional",
+                    "pie",
+                    "doughnut",
+                    "treemap",
+                    "voronoi",
+                    "sunburst",
+                    "arc",
+                    "gridplot",
+                    "venn",
+                    "waterfall",
+                    "column",
+                    "bar",
+                    "column-grouped",
+                    "bar-grouped",
+                    "bar-stacked-proportional-magnitude",
+                    "symbol-proportional",
+                    "isotope",
+                    "lollipop-h-magnitude",
+                    "lollipop-v-magnitude",
+                    "radar",
+                    "bullet",
+                    "parallel-coordinates",
+                    "basic-choropleth",
+                    "proportional-symbol",
+                    "flow-map",
+                    "contour",
+                    "equalised-cartogram",
+                    "scaled-cartogram",
+                    "dot-density",
+                    "heat-map",
+                    "sankey",
+                    "waterfall-flow",
+                    "chord",
+                    "network"
+                  ]
+                },
+                "category": {
+                  "type": "string",
+                  "description": "Category of the selected chart type",
+                  "enum": [
+                    "Change v Time",
+                    "Correlation",
+                    "Deviation",
+                    "Distribution",
+                    "Flow",
+                    "Magnitude",
+                    "Part to whole",
+                    "Ranking",
+                    "Spatial",
+                    "Uncategorized"
+                  ]
+                },
+                "x_axis": {
+                  "type": "string",
+                  "description": "What should be on the X-axis"
+                },
+                "y_axis": {
+                  "type": "string",
+                  "description": "What should be on the Y-axis"
+                },
+                "legend": {
+                  "type": "string",
+                  "description": "What information should be in the legend"
+                },
+                "justification": {
+                  "type": "string",
+                  "description": "2-3 sentence explanation of why this graph type is ideal"
+                }
+              },
+              "required": [
+                "chart_name",
+                "category",
+                "x_axis",
+                "y_axis",
+                "legend",
+                "justification"
+              ]
+            },
+            "minItems": 2,
+            "maxItems": 3
+          }
+        },
+        "required": [
+          "recommendations"
+        ]
+      }
+    }
+  }
+]
