@@ -3,14 +3,10 @@
 import {
   BookOpen,
   Bot,
-  ChartColumn,
-  ChartLine,
-  ChartScatter,
   KeyRound,
   LoaderCircle,
   MessageSquareText,
   Table,
-  TriangleAlert,
 } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import type { FormEvent } from "react";
@@ -101,31 +97,20 @@ export default function HomePage({ serverKeyConfigured, promptTemplate }: HomePa
         <header className={styles["page-header"]}>
           <h1 className={styles["title"]}>
             Chart Type Assistant
-            <span className={styles["title-icons"]} aria-hidden="true">
-              <ChartColumn size={22} />
-              <ChartLine size={22} />
-              <ChartScatter size={22} />
-            </span>
           </h1>
           <p className={styles["intro"]}>
             This tool uses AI to recommend the best types of charts based on your key message and data.
           </p>
         </header>
 
-        <section className={styles["reference"]} aria-label="About the Visual Vocabulary">
-          <blockquote className={styles["quote"]}>
-            <p>&ldquo;Graphs show relationships not data.&rdquo;</p>
-            <footer>
-              &mdash; Alan Smith (
-              <BookOpen size={14} aria-hidden="true" className={styles["inline-icon"]} />{" "}
-              <a href={HOW_CHARTS_WORK_URL}>How Charts Work</a>)
-            </footer>
-          </blockquote>
-          <p className={styles["reference-copy"]}>
-            <a href={VISUAL_VOCABULARY_URL}>FT Interactive Visual Vocabulary</a> is a comprehensive resource for
-            chart types, their characteristics, and <strong>relationships</strong> they best represent
-          </p>
-        </section>
+        <blockquote className={styles["quote"]}>
+          <p>&ldquo;Graphs show relationships not data.&rdquo;</p>
+          <footer>
+            &mdash; Alan Smith (
+            <BookOpen size={14} aria-hidden="true" className={styles["inline-icon"]} />{" "}
+            <a href={HOW_CHARTS_WORK_URL}>How Charts Work</a>)
+          </footer>
+        </blockquote>
 
         <form className={styles["form"]} onSubmit={handleSubmit} noValidate>
           <div className={styles["fields"]}>
@@ -197,10 +182,6 @@ export default function HomePage({ serverKeyConfigured, promptTemplate }: HomePa
           >
             Get Recommendations
           </Button>
-          <p className={styles["disclaimer"]}>
-            <TriangleAlert size={14} aria-hidden="true" />
-            Recommendations are AI-generated and may not always be accurate.
-          </p>
         </form>
 
         <section className={styles["results"]} aria-live="polite" aria-label="Recommendations">

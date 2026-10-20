@@ -36,12 +36,6 @@ describe("HomePage", () => {
     );
   });
 
-  it("warns that recommendations are AI-generated", () => {
-    renderHomePage();
-
-    expect(screen.getByText("Recommendations are AI-generated and may not always be accurate.")).toBeInTheDocument();
-  });
-
   it("validates the key message, then the data description, without calling the API", async () => {
     const fetchMock = vi.fn();
     vi.stubGlobal("fetch", fetchMock);

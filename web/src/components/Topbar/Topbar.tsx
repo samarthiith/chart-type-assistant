@@ -1,7 +1,7 @@
 "use client";
 
-import { FileText, Info } from "lucide-react";
-import { useState } from "react";
+import { FileText, Info, TriangleAlert } from "lucide-react";
+import { useId, useState } from "react";
 
 import Dialog from "@/components/Dialog/Dialog";
 import { ISSUES_URL, MODEL_NAME, REPOSITORY_URL } from "@/shared/constants";
@@ -16,15 +16,25 @@ type OpenDialog = "about" | "prompt-template" | null;
 
 export default function Topbar({ promptTemplate }: TopbarProps) {
   const [openDialog, setOpenDialog] = useState<OpenDialog>(null);
+  const disclaimerId = useId();
 
   return (
     <header className={styles["topbar"]}>
-      <p className={styles["status"]}>
-        <span className={styles["status-dot"]} aria-hidden="true" />
-        <span className={styles["status-text"]}>{MODEL_NAME} via OpenRouter</span>
-      </p>
-
       <nav className={styles["utilities"]} aria-label="Tool information">
+        <span className={styles["disclaimer"]}>
+          <button
+            type="button"
+            className={styles["utility-button"]}
+            aria-label="AI disclaimer"
+            aria-describedby={disclaimerId}
+            onKeyDown={(event) => event.key === "Escape" && event.currentTarget.blur()}
+          >
+            <TriangleAlert size={18} aria-hidden="true" />
+          </button>
+          <span id={disclaimerId} role="tooltip" className={styles["disclaimer-tooltip"]}>
+            Recommendations are AI-generated and may not always be accurate.
+          </span>
+        </span>
         <button
           type="button"
           className={styles["utility-button"]}

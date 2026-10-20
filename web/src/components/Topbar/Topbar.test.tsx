@@ -5,10 +5,12 @@ import { describe, expect, it } from "vitest";
 import Topbar from "@/components/Topbar/Topbar";
 
 describe("Topbar", () => {
-  it("names the model in use", () => {
+  it("describes the AI disclaimer icon with the warning text", () => {
     render(<Topbar promptTemplate="" />);
 
-    expect(screen.getByText("google/gemini-3-flash-preview via OpenRouter")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "AI disclaimer" })).toHaveAccessibleDescription(
+      "Recommendations are AI-generated and may not always be accurate.",
+    );
   });
 
   it("opens and closes the About dialog", async () => {
